@@ -44,12 +44,6 @@ async function queryData(sqlQuery) {
 	return res;
 }
 
-app.get("/api/hello", async (req, res) => {
-	// res.json(JSON.stringify([{ test: "test" }]));
-	let lim = 2;
-	res.json(await queryData(`SELECT * FROM siteDialogs LIMIT ${lim}`));
-});
-
 app.get("/api/getText", async (req, res) => {
 	// res.json(JSON.stringify([{ test: "test" }]));
 
@@ -85,7 +79,7 @@ app.get("/api/getText", async (req, res) => {
 			}
 		} catch (e) {
 			return res.status(500).send({
-				message: e,
+				message: "Error!",
 			});
 		}
 	} else {
